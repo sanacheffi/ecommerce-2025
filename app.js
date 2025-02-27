@@ -1,13 +1,14 @@
 const express=require('express') 
 const mongoose=require('mongoose') 
 const dotenv=require('dotenv')
-
+const cors=require('cors')
 const app=express()
 const CategorieRouter =require("./routes/categorie.route")
 const scategorieRouter =require("./routes/scategorie.route")
 const articleRouter =require("./routes/article.route")
 const chatbotRouter=require("./routes/chatbot.route")
 app.use(express.json())
+app.use(cors())
 dotenv.config()
 
 app.get('/',(req,res) =>{
