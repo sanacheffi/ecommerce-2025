@@ -7,6 +7,9 @@ const CategorieRouter =require("./routes/categorie.route")
 const scategorieRouter =require("./routes/scategorie.route")
 const articleRouter =require("./routes/article.route")
 const chatbotRouter=require("./routes/chatbot.route")
+const userRouter =require("./routes/user.route")
+const chatbotRequeteRouter = require("./routes/chatbot-requete.route")
+const paymentRouter =require("./routes/payment.route");
 app.use(express.json())
 app.use(cors())
 dotenv.config()
@@ -25,6 +28,9 @@ app.use('/api/categories', CategorieRouter);
 app.use('/api/scategories', scategorieRouter);
 app.use('/api/articles', articleRouter);
 app.use("/api/chat",chatbotRouter);
+app.use('/api/users', userRouter);
+app.use('/api/chatbot', chatbotRequeteRouter);
+app.use('/api/payment', paymentRouter);
 app.listen(process.env.PORT,function(){
     console.log(`serveur is listen on port ${process.env.PORT}`)
 })
