@@ -74,6 +74,8 @@ console.error(" Erreur serveur:", error);
 res.status(500).json({ error: "Erreur serveur" });
 }
 });
+
+
 router.get('/', async (req, res, )=> {
 try {
 const articles = await Article.find({}, null, {sort: {'_id': -1}}).populate("scategorieID").exec();
